@@ -1,0 +1,15 @@
+{
+  "name": "Guia Familiar Disneyland Paris",
+  "short_name": "Disney Boluda",
+  "description": "Guia de viatge de la familia Boluda a Disneyland Paris, 8-12 de novembre.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5f7fb",
+  "theme_color": "#7C5CC4",
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

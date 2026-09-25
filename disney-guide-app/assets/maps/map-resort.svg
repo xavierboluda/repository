@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 520" font-family="'Inter', 'Work Sans', Arial, sans-serif">
+  <defs>
+    <style>
+      .zone { stroke: #1a2744; stroke-width: 2; }
+      .zone-label { font-size: 19px; font-weight: 700; fill: #1a2744; }
+      .sub-label { font-size: 12px; fill: #4a5568; }
+      .route { stroke: #c9a227; stroke-width: 3; stroke-dasharray: 2 9; stroke-linecap: round; fill: none; }
+      .time-pill { fill: #f7f1e3; stroke: #c9a227; stroke-width: 1.5; }
+      .time-text { font-size: 12px; fill: #1a2744; font-weight: 600; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="620" height="520" fill="#f4ede0"/>
+
+  <!-- Llac decoratiu -->
+  <ellipse cx="330" cy="330" rx="70" ry="42" fill="#a8c5d6" opacity="0.55"/>
+  <text x="330" y="334" text-anchor="middle" class="sub-label" fill="#2a5570">Llac Disney</text>
+
+  <!-- Disneyland Park -->
+  <ellipse cx="170" cy="140" rx="140" ry="100" class="zone" fill="#dce7d9"/>
+  <text x="170" y="120" text-anchor="middle" class="zone-label">Disneyland Park</text>
+  <text x="170" y="145" text-anchor="middle" class="sub-label">El castell · Fantasyland</text>
+
+  <!-- Disney Adventure World -->
+  <ellipse cx="450" cy="150" rx="150" ry="105" class="zone" fill="#e6d8c3"/>
+  <text x="450" y="128" text-anchor="middle" class="zone-label">Disney Adventure World</text>
+  <text x="450" y="153" text-anchor="middle" class="sub-label">Frozen · Avengers · Pixar</text>
+
+  <!-- Disney Village -->
+  <ellipse cx="310" cy="330" rx="100" ry="60" class="zone" fill="#f0e2b8"/>
+  <text x="310" y="285" text-anchor="middle" class="zone-label">Disney Village</text>
+  <text x="310" y="380" text-anchor="middle" class="sub-label">Restaurants · Botigues</text>
+
+  <!-- Newport Bay Club -->
+  <ellipse cx="310" cy="460" rx="120" ry="50" class="zone" fill="#c9d6e0"/>
+  <text x="310" y="452" text-anchor="middle" class="zone-label">Newport Bay Club</text>
+  <text x="310" y="475" text-anchor="middle" class="sub-label">El nostre hotel</text>
+
+  <!-- Routes -->
+  <path class="route" d="M230 210 C 260 250, 280 270, 300 285"/>
+  <path class="route" d="M400 230 C 380 260, 350 280, 340 290"/>
+  <path class="route" d="M310 385 C 310 410, 310 430, 310 430"/>
+
+  <!-- Time pills -->
+  <g>
+    <rect class="time-pill" x="220" y="228" width="118" height="26" rx="13"/>
+    <text class="time-text" x="279" y="245">Village → Disneyland: 5 min</text>
+  </g>
+  <g>
+    <rect class="time-pill" x="352" y="238" width="122" height="26" rx="13"/>
+    <text class="time-text" x="413" y="255">Village → Adventure: 5 min</text>
+  </g>
+  <g>
+    <rect class="time-pill" x="245" y="400" width="130" height="26" rx="13"/>
+    <text class="time-text" x="310" y="417">Hotel → Village: 8 min</text>
+  </g>
+
+  <!-- Compass mini -->
+  <g transform="translate(555,40)">
+    <circle r="26" fill="none" stroke="#c9a227" stroke-width="1.5"/>
+    <text y="-8" text-anchor="middle" font-size="11" fill="#1a2744">N</text>
+    <line x1="0" y1="-18" x2="0" y2="18" stroke="#1a2744" stroke-width="1.5"/>
+    <line x1="-18" y1="0" x2="18" y2="0" stroke="#1a2744" stroke-width="1.5"/>
+  </g>
+</svg>
