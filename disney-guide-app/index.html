@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guia Familiar Disneyland Paris</title>
+<meta name="description" content="App de viatge de la familia Boluda a Disneyland Paris, 8-12 de novembre.">
+<meta name="theme-color" content="#7C5CC4">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================================================
+     SPRITE D'ICONES (originals, no representen personatges)
+     ============================================================ -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 64 64"><path fill="currentColor" d="M32 6 4 28v30h18V40h20v18h18V28z"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><rect x="8" y="12" width="48" height="44" rx="5"/><line x1="8" y1="24" x2="56" y2="24"/><line x1="20" y1="6" x2="20" y2="16"/><line x1="44" y1="6" x2="44" y2="16"/></g></symbol>
+  <symbol id="i-map" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><polygon points="8,12 24,6 40,12 56,6 56,52 40,58 24,52 8,58"/><line x1="24" y1="6" x2="24" y2="52"/><line x1="40" y1="12" x2="40" y2="58"/></g></symbol>
+  <symbol id="i-compass2" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4"><circle cx="32" cy="32" r="24"/></g><polygon fill="currentColor" points="32,16 38,32 32,48 26,32"/></symbol>
+  <symbol id="i-passport" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><rect x="12" y="6" width="40" height="52" rx="4"/><circle cx="32" cy="28" r="8"/><line x1="22" y1="44" x2="42" y2="44"/></g></symbol>
+  <symbol id="i-family" viewBox="0 0 64 64"><g fill="currentColor"><circle cx="20" cy="16" r="7"/><path d="M8 42 c0-10 8-16 12-16s12 6 12 16v6H8z"/><circle cx="42" cy="18" r="6"/><path d="M32 44c0-8 6-13 10-13s10 5 10 13v4H32z"/></g></symbol>
+  <symbol id="i-nephews" viewBox="0 0 64 64"><g fill="currentColor"><circle cx="20" cy="16" r="7"/><path d="M8 44c0-10 6-16 12-16s12 6 12 16v4H8z"/><circle cx="44" cy="16" r="7"/><path d="M32 44c0-10 6-16 12-16s12 6 12 16v4H32z"/></g></symbol>
+  <symbol id="i-stroller" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 20 h6 l10 22 h18"/><path d="M20 20 c10-8 24-8 26 4"/><circle cx="24" cy="50" r="6" fill="currentColor" stroke="none"/><circle cx="46" cy="50" r="6" fill="currentColor" stroke="none"/></g></symbol>
+  <symbol id="i-footsteps" viewBox="0 0 64 64"><g fill="currentColor"><ellipse cx="20" cy="18" rx="6" ry="9"/><ellipse cx="44" cy="34" rx="6" ry="9"/><ellipse cx="20" cy="50" rx="6" ry="9"/></g></symbol>
+  <symbol id="i-star" viewBox="0 0 64 64"><path fill="currentColor" d="M32 6 l7 18 19 2 -14 13 4 19 -16 -10 -16 10 4 -19 -14 -13 19 -2z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4"><circle cx="32" cy="32" r="24"/><line x1="32" y1="32" x2="32" y2="18" stroke-linecap="round"/><line x1="32" y1="32" x2="42" y2="38" stroke-linecap="round"/></g></symbol>
+  <symbol id="i-pin" viewBox="0 0 64 64"><path fill="currentColor" d="M32 4C18 4 8 14 8 27c0 18 24 33 24 33s24-15 24-33C56 14 46 4 32 4z"/><circle cx="32" cy="26" r="8" fill="#fff"/></symbol>
+  <symbol id="i-water" viewBox="0 0 64 64"><path fill="currentColor" d="M32 6C20 22 12 34 12 44a20 20 0 0 0 40 0C52 34 44 22 32 6z"/></symbol>
+  <symbol id="i-fork" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><line x1="18" y1="8" x2="18" y2="56"/><line x1="12" y1="8" x2="12" y2="24"/><line x1="24" y1="8" x2="24" y2="24"/><path d="M12 24c0 8 12 8 12 0"/><path d="M46 8c-6 0-10 6-10 14 0 6 4 10 8 11v23" fill="none"/></g></symbol>
+  <symbol id="i-parade" viewBox="0 0 64 64"><g fill="currentColor"><rect x="10" y="38" width="44" height="14" rx="3"/><circle cx="18" cy="54" r="5"/><circle cx="46" cy="54" r="5"/><path d="M20 38v-14l10 6z"/></g></symbol>
+  <symbol id="i-firework" viewBox="0 0 64 64"><g stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><line x1="32" y1="8" x2="32" y2="20"/><line x1="32" y1="44" x2="32" y2="56"/><line x1="8" y1="32" x2="20" y2="32"/><line x1="44" y1="32" x2="56" y2="32"/><line x1="15" y1="15" x2="23" y2="23"/><line x1="41" y1="41" x2="49" y2="49"/><line x1="49" y1="15" x2="41" y2="23"/><line x1="23" y1="41" x2="15" y2="49"/><circle cx="32" cy="32" r="6" fill="currentColor" stroke="none"/></g></symbol>
+  <symbol id="i-rocket" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><path d="M32 8c10 10 10 28 0 40C22 36 22 18 32 8z"/><circle cx="32" cy="24" r="4" fill="currentColor" stroke="none"/><path d="M24 40l-8 12M40 40l8 12"/></g></symbol>
+  <symbol id="i-wand" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><line x1="14" y1="50" x2="42" y2="22"/><path d="M46 10l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="currentColor" stroke="none"/></g></symbol>
+  <symbol id="i-sun" viewBox="0 0 64 64"><g stroke="currentColor" stroke-width="4" stroke-linecap="round"><circle cx="32" cy="32" r="12" fill="currentColor" stroke="none"/><line x1="32" y1="4" x2="32" y2="12"/><line x1="32" y1="52" x2="32" y2="60"/><line x1="4" y1="32" x2="12" y2="32"/><line x1="52" y1="32" x2="60" y2="32"/><line x1="12" y1="12" x2="18" y2="18"/><line x1="46" y1="46" x2="52" y2="52"/><line x1="52" y1="12" x2="46" y2="18"/><line x1="18" y1="46" x2="12" y2="52"/></g></symbol>
+  <symbol id="i-baby" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4"><circle cx="32" cy="24" r="14"/><path d="M20 40c0 10 24 10 24 0"/></g></symbol>
+  <symbol id="i-toilet" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><rect x="18" y="8" width="28" height="18" rx="4"/><path d="M20 26v10a12 12 0 0 0 24 0V26"/></g></symbol>
+  <symbol id="i-ticket" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><path d="M6 24a5 5 0 0 1 0-8h52a5 5 0 0 1 0 8 5 5 0 0 0 0 16 5 5 0 0 1 0 8H6a5 5 0 0 1 0-8 5 5 0 0 0 0-16z"/></g></symbol>
+  <symbol id="i-icecream" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><path d="M18 26a14 14 0 0 1 28 0z" fill="currentColor" stroke="none"/><path d="M20 26l12 32 12-32z"/></g></symbol>
+  <symbol id="i-suitcase" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><rect x="8" y="20" width="48" height="34" rx="4"/><path d="M24 20v-6a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v6"/></g></symbol>
+  <symbol id="i-snowflake" viewBox="0 0 64 64"><g stroke="currentColor" stroke-width="4" stroke-linecap="round"><line x1="32" y1="6" x2="32" y2="58"/><line x1="10" y1="18" x2="54" y2="46"/><line x1="10" y1="46" x2="54" y2="18"/></g></symbol>
+  <symbol id="i-bow" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><path d="M32 32 8 16v32z"/><path d="M32 32 56 16v32z"/><circle cx="32" cy="32" r="6" fill="currentColor" stroke="none"/></g></symbol>
+  <symbol id="i-honeypot" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><path d="M18 26h28l-4 30a4 4 0 0 1-4 4h-12a4 4 0 0 1-4-4z"/><line x1="16" y1="26" x2="48" y2="26"/></g></symbol>
+  <symbol id="i-hibiscus" viewBox="0 0 64 64"><g fill="currentColor"><circle cx="32" cy="18" r="9"/><circle cx="48" cy="32" r="9"/><circle cx="32" cy="46" r="9"/><circle cx="16" cy="32" r="9"/></g><circle cx="32" cy="32" r="6" fill="#fff"/></symbol>
+  <symbol id="i-lantern" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><ellipse cx="32" cy="34" rx="16" ry="20"/><line x1="32" y1="8" x2="32" y2="14"/></g></symbol>
+  <symbol id="i-shell" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><path d="M32 10C14 18 12 40 32 56 52 40 50 18 32 10z"/></g></symbol>
+</svg>
+
+<div class="app">
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="wordmark">Guia Familiar</div>
+    <div class="wordmark-sub">Disneyland Paris</div>
+    <div class="dates-pill">8–12 NOV · FAMILIA BOLUDA</div>
+  </header>
+
+  <main class="view-root">
+
+    <!-- ============================================================
+         VISTA: INICI
+         ============================================================ -->
+    <section id="view-home" class="view active">
+      <div class="card hero-card">
+        <div class="section-kicker">Benvinguda</div>
+        <h3>Aquesta app es nostra</h3>
+        <p style="font-size:13.5px;">No es un fulletó del parc: es el mapa del nostre viatge. Aqui hi ha les hores, els restaurants, els trucs i els petits rituals que volem viure junts — avis, nebots, i les nostres dues excursionistes mes petites, la Bruna i la Joana.</p>
+      </div>
+
+      <div class="section-title">No volem "fer" Disneyland</div>
+      <p style="margin-top:-8px;font-size:13.5px;color:var(--muted);">Volem gaudir-la, a un ritme senzill que es repeteix cada dia.</p>
+      <div class="philosophy-row">
+        <div class="philosophy-card"><div class="icon-wrap"><svg class="icon"><use href="#i-family"/></svg></div><h4>Al mati</h4><p>Tots junts</p></div>
+        <div class="philosophy-card"><div class="icon-wrap"><svg class="icon"><use href="#i-footsteps"/></svg></div><h4>A la tarda</h4><p>Cadascu al seu ritme</p></div>
+        <div class="philosophy-card"><div class="icon-wrap"><svg class="icon"><use href="#i-star"/></svg></div><h4>Al vespre</h4><p>Ens retrobem</p></div>
+      </div>
+
+      <div class="card">
+        <div class="section-kicker">On dormim</div>
+        <h3>Disney Newport Bay Club</h3>
+        <p style="font-size:13.5px;">El nostre "port base": ambient marí, tranquil, a nomes 8 minuts a peu de Disney Village.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);">
+          <span><svg class="icon" style="color:var(--dp-purple)"><use href="#i-clock"/></svg> Aprofita l'Extra Magic Time</span>
+          <span><svg class="icon" style="color:var(--dp-purple)"><use href="#i-footsteps"/></svg> 8 min al Village</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-kicker">Al check-in</div>
+        <h3>Checklist d'arribada</h3>
+        <ul class="checklist" id="checklist-arrival">
+          <li><input type="checkbox" data-key="arrival-0" id="ar0"><label for="ar0">Confirmar l'hora de check-out del dia 12.</label></li>
+          <li><input type="checkbox" data-key="arrival-1" id="ar1"><label for="ar1">Confirmar l'Extra Magic Time i quins dies l'aplica.</label></li>
+          <li><input type="checkbox" data-key="arrival-2" id="ar2"><label for="ar2">Demanar el mapa en paper dels parcs.</label></li>
+          <li><input type="checkbox" data-key="arrival-3" id="ar3"><label for="ar3">Confirmar si la mitja pensio inclou algun apat el dia 12.</label></li>
+        </ul>
+        <div class="callout navy">
+          <h4>Per preguntar en angles</h4>
+          <div class="en-phrase">"We have the Half Board meal plan. Could you confirm exactly which meals are included on our departure day?"</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-kicker">Abans de marxar de casa</div>
+        <h3>Checklist final</h3>
+        <ul class="checklist" id="checklist-final">
+          <li><input type="checkbox" data-key="final-0" id="f0"><label for="f0">Documentacio i reserves a punt.</label></li>
+          <li><input type="checkbox" data-key="final-1" id="f1"><label for="f1">Kit Bruna &amp; Joana preparat.</label></li>
+          <li><input type="checkbox" data-key="final-2" id="f2"><label for="f2">Aquesta app instal·lada al mobil.</label></li>
+          <li><input type="checkbox" data-key="final-3" id="f3"><label for="f3">Frase d'angles per la mitja pensio apresa.</label></li>
+          <li><input type="checkbox" data-key="final-4" id="f4"><label for="f4">Carregadors i bateria externa carregats.</label></li>
+          <li><input type="checkbox" data-key="final-5" id="f5"><label for="f5">Passaport de la Bruna a punt.</label></li>
+        </ul>
+      </div>
+      <p style="text-align:center;font-family:var(--font-script);font-size:20px;color:var(--dp-purple);margin:18px 0 4px;">Bon viatge, familia Boluda</p>
+    </section>
+
+    <!-- ============================================================
+         VISTA: DIES
+         ============================================================ -->
+    <section id="view-days" class="view">
+      <div class="section-title">Dia a dia</div>
+      <div class="pill-row" id="day-pills">
+        <button class="pill active" data-day="1">Diu 8</button>
+        <button class="pill" data-day="2">Dl 9</button>
+        <button class="pill" data-day="3">Dt 10</button>
+        <button class="pill" data-day="4">Dc 11</button>
+        <button class="pill" data-day="5">Dj 12</button>
+      </div>
+
+      <div class="day-panel active" id="day-1">
+        <div class="day-letter"><b>Mickey ens dona la benvinguda</b>Arribem amb les maletes encara calentes del viatge. No cal correr enlloc: nomes cal entrar en mode vacances i deixar que el parc ens abraci amb les primeres llums.</div>
+        <span class="badge gradient">Disney Adventure World</span>
+        <div class="timeline" style="margin-top:14px;">
+          <div class="t-item"><div class="t-time">16:30 – 17:00</div><div class="t-title">Arribada al parc</div><div class="t-desc">Objectiu: entrar en mode vacances, sense pressa.</div></div>
+          <div class="t-item"><div class="t-time">17:00</div><div class="t-title">Passeig per World of Frozen</div><div class="t-desc">Primer contacte amb Arendelle, sense entrar a cap atraccio.</div></div>
+          <div class="t-item"><div class="t-time">17:45</div><div class="t-title">Cars Road Trip</div><div class="t-desc">Una atraccio suau i divertida per a tots.</div></div>
+          <div class="t-item"><div class="t-time">18:20</div><div class="t-title">Ratatouille (si hi ha poca cua)</div><div class="t-desc">Nomes si el temps d'espera es raonable.</div></div>
+          <div class="t-item moment"><div class="t-time">19:00 · Sopar</div><div class="t-title">Bistrot Chez Rémy</div><div class="t-desc">Just al costat de Ratatouille, molt comode.</div></div>
+          <div class="t-item moment"><div class="t-time">21:10</div><div class="t-title">Disney Cascade of Lights</div><div class="t-desc">El primer gran "wow" del viatge. Un dia que ha de transmetre calma.</div></div>
+        </div>
+      </div>
+
+      <div class="day-panel" id="day-2">
+        <div class="day-letter"><b>Elsa ens convida a Arendelle</b>Avui es el gran dia de Frozen. Sortim d'hora, tots junts, per viure'l amb calma abans que arribi la gentada.</div>
+        <span class="badge gradient">Disney Adventure World</span>
+        <div class="timeline" style="margin-top:14px;">
+          <div class="t-item moment"><div class="t-time">Mati (tots junts)</div><div class="t-title">1. Frozen Ever After</div><div class="t-desc">La joia del dia. Hi anem els primers.</div></div>
+          <div class="t-item"><div class="t-time">→</div><div class="t-title">2. World of Frozen</div><div class="t-desc">Passeig tranquil per tota la zona tematica.</div></div>
+          <div class="t-item"><div class="t-time">→</div><div class="t-title">3. Fotos en familia</div><div class="t-desc">Amb el poble d'Arendelle de fons.</div></div>
+          <div class="t-item"><div class="t-time">→</div><div class="t-title">4. Ratatouille</div><div class="t-desc">Tanquem el mati amb la seva atraccio preferida.</div></div>
+        </div>
+        <div class="callout">
+          <h4>Migdia · dues reserves obertes</h4>
+          <p><strong>Opcio A</strong> — PYM Kitchen, 15:15 &nbsp;·&nbsp; <strong>Opcio B</strong> — Chez Rémy, 15:30. Decidirem el mateix dia.</p>
+        </div>
+        <div class="timeline">
+          <div class="t-item moment"><div class="t-time">20:15 · Sopar</div><div class="t-title">Cape Cod</div><div class="t-desc">Al nostre propi hotel. Comodissim per acabar sense desplacaments.</div></div>
+        </div>
+      </div>
+
+      <div class="day-panel" id="day-3">
+        <div class="day-letter"><b>Peter Pan ens anima a volar</b>El gran dia del castell. Al mati som tots plegats; a la tarda, cadascu troba la seva propia aventura.</div>
+        <span class="badge gradient">Disneyland Park</span>
+        <div class="timeline" style="margin-top:14px;">
+          <div class="t-item moment"><div class="t-time">Mati (tota la familia)</div><div class="t-title">1. Peter Pan's Flight</div><div class="t-desc">Ordre prioritari del mati.</div></div>
+          <div class="t-item"><div class="t-time">→</div><div class="t-title">2. It's a Small World</div></div>
+          <div class="t-item"><div class="t-time">→</div><div class="t-title">3. Dumbo the Flying Elephant</div></div>
+          <div class="t-item"><div class="t-time">→</div><div class="t-title">4. Carrousel de Lancelot</div></div>
+          <div class="t-item moment"><div class="t-time">11:45 · Dinar</div><div class="t-title">Agrabah Café</div></div>
+        </div>
+        <div class="day-split">
+          <div class="card"><h4><svg class="icon" style="color:var(--dp-purple)"><use href="#i-nephews"/></svg> Artur &amp; Martina</h4><p style="font-size:12px;margin:0;">Big Thunder Mountain i atraccions fortes.</p></div>
+          <div class="card"><h4><svg class="icon" style="color:var(--dp-purple)"><use href="#i-stroller"/></svg> Nosaltres</h4><p style="font-size:12px;margin:0;">Descans, cotxet i gelat.</p></div>
+        </div>
+        <div class="timeline">
+          <div class="t-item moment"><div class="t-time">Tarda</div><div class="t-title">Disney Stars on Parade</div><div class="t-desc">Prioritat molt alta avui.</div></div>
+          <div class="t-item moment"><div class="t-time">18:00 (confirmat) · Sopar</div><div class="t-title">Captain Jack's</div><div class="t-desc">Dins mateix de Pirates del Carib.</div></div>
+          <div class="t-item moment"><div class="t-time">22:00</div><div class="t-title">Disney Tales of Magic</div><div class="t-desc">El gran final del dia. Millor des del lateral de Plaza Gardens — mes comode amb cotxet.</div></div>
+        </div>
+      </div>
+
+      <div class="day-panel" id="day-4">
+        <div class="day-letter"><b>Vaiana ens recorda explorar</b>Avui no hi ha guio fix. Podem canviar de parc, seguir l'instint, i descobrir el que el dia ens porti.</div>
+        <span class="badge outline">Dia flexible</span>
+        <div class="timeline" style="margin-top:14px;">
+          <div class="t-item moment"><div class="t-time">12:00 · Dinar</div><div class="t-title">STK House</div><div class="t-desc">Disney Village.</div></div>
+        </div>
+        <div class="callout">
+          <h4>Sopar · dues opcions obertes</h4>
+          <p><strong>Opcio A</strong> — Chez Rémy, 19:30 &nbsp;·&nbsp; <strong>Opcio B</strong> — La Grange, 20:00.</p>
+        </div>
+      </div>
+
+      <div class="day-panel" id="day-5">
+        <div class="day-letter"><b>Fins aviat, Disneyland</b>No intentem fer cap atraccio mes. Avui toca acomiadar-nos amb calma.</div>
+        <span class="badge outline">Sortida</span>
+        <ul class="attr-list" style="margin-top:14px;">
+          <li><svg class="icon"><use href="#i-sun"/></svg> Esmorzar tranquil</li>
+          <li><svg class="icon"><use href="#i-star"/></svg> Fotos de comiat</li>
+          <li><svg class="icon"><use href="#i-footsteps"/></svg> Ultim passeig pel resort</li>
+          <li><svg class="icon"><use href="#i-suitcase"/></svg> Transport de tornada</li>
+        </ul>
+        <div class="callout navy">
+          <h4>Recorda</h4>
+          <p>Confirmar al check-in quins apats de la mitja pensio inclou aquest dia, abans de marxar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         VISTA: MAPES
+         ============================================================ -->
+    <section id="view-maps" class="view">
+      <div class="section-title">On es tot</div>
+      <div class="meeting-grid" style="margin-bottom:16px;">
+        <div class="meeting-card"><div class="icon-wrap"><svg class="icon"><use href="#i-pin"/></svg></div><h4>Main Street Gazebo</h4><p>Disneyland Park, davant del castell. "Sota la cupula blanca"</p></div>
+        <div class="meeting-card"><div class="icon-wrap"><svg class="icon"><use href="#i-water"/></svg></div><h4>Llac d'Adventure World</h4><p>Entre World of Frozen i Pixar Place. "Vora l'aigua"</p></div>
+        <div class="meeting-card"><div class="icon-wrap"><svg class="icon"><use href="#i-map"/></svg></div><h4>Lego Store</h4><p>Disney Village. "On brillen els colors"</p></div>
+      </div>
+
+      <div class="card map-card">
+        <div class="section-kicker">Mapa 1 · Resort complet</div>
+        <img src="assets/maps/map-resort.svg" alt="Mapa esquematic del resort" data-zoom>
+        <div class="map-legend">
+          <span><i style="background:#c9d6e0"></i>Newport Bay Club</span>
+          <span><i style="background:#f0e2b8"></i>Disney Village</span>
+          <span><i style="background:#dce7d9"></i>Disneyland Park</span>
+          <span><i style="background:#e6d8c3"></i>Adventure World</span>
+        </div>
+      </div>
+      <div class="card map-card">
+        <div class="section-kicker">Mapa 2 · Disneyland Park</div>
+        <img src="assets/maps/map-disneyland.svg" alt="Mapa de Disneyland Park amb ruta recomanada" data-zoom>
+      </div>
+      <div class="card map-card">
+        <div class="section-kicker">Mapa 3 · Disney Adventure World</div>
+        <img src="assets/maps/map-adventure.svg" alt="Mapa d'Adventure World amb ruta recomanada" data-zoom>
+      </div>
+      <div class="card map-card">
+        <div class="section-kicker">Mapa 4 · Disney Village</div>
+        <img src="assets/maps/map-village.svg" alt="Mapa de Disney Village" data-zoom>
+        <p style="font-size:12px;color:var(--muted);margin-top:8px;">A 8 minuts a peu del nostre hotel.</p>
+      </div>
+      <p style="font-size:11px;color:var(--muted);text-align:center;">Mapes originals i esquematics (no oficials), nomes per orientar-nos.</p>
+    </section>
+
+    <!-- ============================================================
+         VISTA: GUIA (restaurants / espectacles / atraccions / trucs / kit)
+         ============================================================ -->
+    <section id="view-guide" class="view">
+      <div class="section-title">Guia rapida</div>
+      <div class="pill-row" id="guide-pills">
+        <button class="pill active" data-sub="restaurants">Restaurants</button>
+        <button class="pill" data-sub="shows">Espectacles</button>
+        <button class="pill" data-sub="attractions">Atraccions</button>
+        <button class="pill" data-sub="tips">Trucs</button>
+        <button class="pill" data-sub="kit">Kit</button>
+      </div>
+
+      <div class="subtab-panel active" id="sub-restaurants">
+        <div class="card rest-card"><h3><svg class="icon" style="color:var(--dp-purple)"><use href="#i-fork"/></svg> Bistrot Chez Rémy</h3><div class="meta"><span>Adventure World</span><span>al costat de Ratatouille</span></div><p style="font-size:13px;">Ambient parisenc en miniatura, com vist pels ulls d'un ratoli.</p><div class="why">Per que l'hem triat: ubicacio comodissima despres de l'atraccio.</div></div>
+        <div class="card rest-card"><h3><svg class="icon" style="color:var(--dp-purple)"><use href="#i-fork"/></svg> PYM Kitchen</h3><div class="meta"><span>Avengers Campus</span><span>5 min de Frozen</span></div><p style="font-size:13px;">Servei rapid, ambient friki-cientific molt divertit.</p><div class="why">Per que l'hem triat: alternativa agil per seguir explorant.</div></div>
+        <div class="card rest-card"><h3><svg class="icon" style="color:var(--dp-purple)"><use href="#i-fork"/></svg> Cape Cod</h3><div class="meta"><span>Newport Bay Club</span></div><p style="font-size:13px;">Buffet relaxat amb vistes al port. Zero desplacaments.</p><div class="why">Per que l'hem triat: despres d'un dia llarg, no calen ni sabates.</div></div>
+        <div class="card rest-card"><h3><svg class="icon" style="color:var(--dp-purple)"><use href="#i-fork"/></svg> Agrabah Café</h3><div class="meta"><span>Disneyland Park</span></div><p style="font-size:13px;">Ambient d'Aladdin, taules a l'ombra.</p><div class="why">Per que l'hem triat: punt mig perfecte del mati del dimarts.</div></div>
+        <div class="card rest-card"><h3><svg class="icon" style="color:var(--dp-purple)"><use href="#i-fork"/></svg> Captain Jack's</h3><div class="meta"><span>dins de Pirates del Carib</span><span class="badge gradient">18:00 confirmat</span></div><p style="font-size:13px;">Un dels restaurants mes espectaculars: es sopa envoltats de vaixells i coves pirates.</p><div class="why">Per que l'hem triat: es una experiencia en si mateixa.</div></div>
+        <div class="card rest-card"><h3><svg class="icon" style="color:var(--dp-purple)"><use href="#i-fork"/></svg> STK House</h3><div class="meta"><span>Disney Village</span></div><p style="font-size:13px;">Steakhouse elegant per al dinar del dimecres.</p><div class="why">Per que l'hem triat: un respir gastronomic al dia flexible.</div></div>
+        <div class="card rest-card"><h3><svg class="icon" style="color:var(--dp-purple)"><use href="#i-fork"/></svg> La Grange</h3><div class="meta"><span>Disney Village</span></div><p style="font-size:13px;">Cuina de brasserie francesa, ambient acollidor.</p><div class="why">Per que l'hem triat: alternativa tranquil·la per quedar-nos al Village.</div></div>
+      </div>
+
+      <div class="subtab-panel" id="sub-shows">
+        <div class="show-tier must">
+          <h4 class="tier-title">Imprescindibles</h4>
+          <div class="show-card"><div class="icon-wrap"><svg class="icon"><use href="#i-firework"/></svg></div><div><h4>Disney Tales of Magic</h4><p>22:00 dimarts · 20 min · arribar 20-30 min abans, lateral de Plaza Gardens.</p></div></div>
+          <div class="show-card"><div class="icon-wrap"><svg class="icon"><use href="#i-parade"/></svg></div><div><h4>Disney Stars on Parade</h4><p>Tarda dimarts · prioritat molt alta.</p></div></div>
+          <div class="show-card"><div class="icon-wrap"><svg class="icon"><use href="#i-snowflake"/></svg></div><div><h4>Celebration in Arendelle</h4><p>Adventure World · ideal amb el mati de Frozen.</p></div></div>
+          <div class="show-card"><div class="icon-wrap"><svg class="icon"><use href="#i-star"/></svg></div><div><h4>Disney Cascade of Lights</h4><p>21:10 diumenge · el primer "wow" del viatge.</p></div></div>
+        </div>
+        <div class="show-tier rec">
+          <h4 class="tier-title">Molt recomanables</h4>
+          <div class="show-card"><div class="icon-wrap"><svg class="icon"><use href="#i-wand"/></svg></div><div><h4>Mickey and the Magician</h4><p>Indoor · bon pla si plou.</p></div></div>
+          <div class="show-card"><div class="icon-wrap"><svg class="icon"><use href="#i-sun"/></svg></div><div><h4>The Lion King: Rhythms of the Pride Lands</h4><p>Indoor · espectacular per als nebots.</p></div></div>
+          <div class="show-card"><div class="icon-wrap"><svg class="icon"><use href="#i-star"/></svg></div><div><h4>Together: A Pixar Story</h4><p>Vespre · emotiu per acabar el dia.</p></div></div>
+        </div>
+        <div class="show-tier pass">
+          <h4 class="tier-title">Si passeu per davant</h4>
+          <div class="show-card"><div class="icon-wrap"><svg class="icon"><use href="#i-bow"/></svg></div><div><h4>Minnie's Dream Factory</h4><p>Nomes si hi coincidim.</p></div></div>
+          <div class="show-card"><div class="icon-wrap"><svg class="icon"><use href="#i-star"/></svg></div><div><h4>Princess Cavalcade</h4><p>Perfecte per a la Bruna.</p></div></div>
+          <div class="show-card"><div class="icon-wrap"><svg class="icon"><use href="#i-water"/></svg></div><div><h4>A Million Splashes</h4><p>Refrescant.</p></div></div>
+        </div>
+        <div class="show-tier split">
+          <h4 class="tier-title">Per anar separats (nebots)</h4>
+          <div class="show-card"><div class="icon-wrap"><svg class="icon"><use href="#i-rocket"/></svg></div><div><h4>Avengers Unite / Spider-Man / Guardians / Wakanda</h4><p>Tarda separada del dimarts.</p></div></div>
+        </div>
+      </div>
+
+      <div class="subtab-panel" id="sub-attractions">
+        <div class="card"><h3><svg class="icon" style="color:var(--dp-purple)"><use href="#i-family"/></svg> Tota la familia</h3>
+          <ul class="attr-list">
+            <li><svg class="icon"><use href="#i-snowflake"/></svg>Frozen Ever After</li>
+            <li><svg class="icon"><use href="#i-star"/></svg>Peter Pan's Flight</li>
+            <li><svg class="icon"><use href="#i-water"/></svg>It's a Small World</li>
+            <li><svg class="icon"><use href="#i-star"/></svg>Dumbo</li>
+            <li><svg class="icon"><use href="#i-fork"/></svg>Ratatouille</li>
+            <li><svg class="icon"><use href="#i-rocket"/></svg>Cars Road Trip</li>
+          </ul>
+        </div>
+        <div class="card"><h3><svg class="icon" style="color:var(--dp-purple)"><use href="#i-nephews"/></svg> Nebots (Artur &amp; Martina)</h3>
+          <ul class="attr-list">
+            <li><svg class="icon"><use href="#i-firework"/></svg>Big Thunder Mountain</li>
+            <li><svg class="icon"><use href="#i-rocket"/></svg>Spider-Man</li>
+            <li><svg class="icon"><use href="#i-firework"/></svg>RC Racer</li>
+            <li><svg class="icon"><use href="#i-rocket"/></svg>Crush's Coaster</li>
+          </ul>
+        </div>
+        <div class="card"><h3><svg class="icon" style="color:var(--dp-purple)"><use href="#i-stroller"/></svg> Moments de descans</h3>
+          <ul class="attr-list">
+            <li><svg class="icon"><use href="#i-footsteps"/></svg>Un tomb en tren pel parc</li>
+            <li><svg class="icon"><use href="#i-pin"/></svg>Seure a mirar el castell</li>
+            <li><svg class="icon"><use href="#i-icecream"/></svg>Passejos sense objectiu, amb gelat</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subtab-panel" id="sub-tips">
+        <div class="tip-grid">
+          <div class="tip"><h4><svg class="icon"><use href="#i-footsteps"/></svg>Rider Switch</h4><p>Si algu es queda amb la Joana o la Bruna, pot fer l'atraccio despres sense tornar a fer cua.</p></div>
+          <div class="tip"><h4><svg class="icon"><use href="#i-clock"/></svg>Extra Magic Time</h4><p>Els dies disponible, val la pena sortir 30 min abans.</p></div>
+          <div class="tip"><h4><svg class="icon"><use href="#i-star"/></svg>Millor lloc pel show</h4><p>Lateral de Plaza Gardens, comode amb cotxet.</p></div>
+          <div class="tip"><h4><svg class="icon"><use href="#i-icecream"/></svg>Quan comprar gelats</h4><p>A mitja tarda, abans que es formin cues.</p></div>
+          <div class="tip"><h4><svg class="icon"><use href="#i-baby"/></svg>Baby Care Center</h4><p>Un a cada parc: per bolquers i biberons amb tranquil·litat.</p></div>
+          <div class="tip"><h4><svg class="icon"><use href="#i-toilet"/></svg>Lavabos menys plens</h4><p>Els mes lluny de les atraccions estrella tenen menys cua.</p></div>
+          <div class="tip"><h4><svg class="icon"><use href="#i-ticket"/></svg>Com evitar cues</h4><p>Atraccions estrella al mati, les tranquil·les a la tarda.</p></div>
+        </div>
+      </div>
+
+      <div class="subtab-panel" id="sub-kit">
+        <div class="section-kicker">Preparades per l'aventura</div>
+        <h3>Kit Bruna &amp; Joana</h3>
+        <div class="kit-grid" id="kit-grid">
+          <div class="kit-item" data-key="kit-0"><button class="met-btn-wrap"><div class="icon-wrap"><svg class="icon"><use href="#i-stroller"/></svg></div><span>Cotxet</span></button></div>
+          <div class="kit-item" data-key="kit-1"><button class="met-btn-wrap"><div class="icon-wrap"><svg class="icon"><use href="#i-baby"/></svg></div><span>Manta</span></button></div>
+          <div class="kit-item" data-key="kit-2"><button class="met-btn-wrap"><div class="icon-wrap"><svg class="icon"><use href="#i-suitcase"/></svg></div><span>Roba de recanvi</span></button></div>
+          <div class="kit-item" data-key="kit-3"><button class="met-btn-wrap"><div class="icon-wrap"><svg class="icon"><use href="#i-icecream"/></svg></div><span>Snacks</span></button></div>
+          <div class="kit-item" data-key="kit-4"><button class="met-btn-wrap"><div class="icon-wrap"><svg class="icon"><use href="#i-water"/></svg></div><span>Aigua</span></button></div>
+          <div class="kit-item" data-key="kit-5"><button class="met-btn-wrap"><div class="icon-wrap"><svg class="icon"><use href="#i-clock"/></svg></div><span>Carregador</span></button></div>
+          <div class="kit-item" data-key="kit-6"><button class="met-btn-wrap"><div class="icon-wrap"><svg class="icon"><use href="#i-sun"/></svg></div><span>Impermeable</span></button></div>
+          <div class="kit-item" data-key="kit-7"><button class="met-btn-wrap"><div class="icon-wrap"><svg class="icon"><use href="#i-baby"/></svg></div><span>Bolquers</span></button></div>
+        </div>
+        <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:12px;">Toca cada element quan el tinguis a la maleta.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         VISTA: PASSAPORT
+         ============================================================ -->
+    <section id="view-passport" class="view">
+      <div class="passport-hero">
+        <img src="assets/illustrations/passport-emblem.svg" alt="Emblema original del passaport">
+        <div class="doc-type">Passaport Oficial</div>
+        <h2>Exploradora Disney</h2>
+        <div class="owner">Bruna Boluda</div>
+      </div>
+
+      <div class="card">
+        <h3>Els meus amics</h3>
+        <p style="font-size:12px;color:var(--muted);">Toca "Trobat!" quan coneguis cadascu.</p>
+        <div class="char-grid" id="char-grid">
+          <div class="char-card" data-key="char-elsa"><div class="icon-wrap"><svg class="icon"><use href="#i-snowflake"/></svg></div><h4>Elsa</h4><button class="met-btn">Trobat!</button></div>
+          <div class="char-card" data-key="char-mickey"><div class="icon-wrap"><svg class="icon"><use href="#i-wand"/></svg></div><h4>Mickey</h4><button class="met-btn">Trobat!</button></div>
+          <div class="char-card" data-key="char-minnie"><div class="icon-wrap"><svg class="icon"><use href="#i-bow"/></svg></div><h4>Minnie</h4><button class="met-btn">Trobat!</button></div>
+          <div class="char-card" data-key="char-winnie"><div class="icon-wrap"><svg class="icon"><use href="#i-honeypot"/></svg></div><h4>Winnie</h4><button class="met-btn">Trobat!</button></div>
+          <div class="char-card" data-key="char-stitch"><div class="icon-wrap"><svg class="icon"><use href="#i-hibiscus"/></svg></div><h4>Stitch</h4><button class="met-btn">Trobat!</button></div>
+          <div class="char-card" data-key="char-rapunzel"><div class="icon-wrap"><svg class="icon"><use href="#i-lantern"/></svg></div><h4>Rapunzel</h4><button class="met-btn">Trobat!</button></div>
+          <div class="char-card" data-key="char-vaiana"><div class="icon-wrap"><svg class="icon"><use href="#i-shell"/></svg></div><h4>Vaiana</h4><button class="met-btn">Trobat!</button></div>
+          <div class="char-card" data-key="char-buzz"><div class="icon-wrap"><svg class="icon"><use href="#i-rocket"/></svg></div><h4>Buzz</h4><button class="met-btn">Trobat!</button></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Les meves missions</h3>
+        <ul class="checklist" id="mission-list">
+          <li><input type="checkbox" data-key="mission-0" id="m0"><label for="m0">Passejar per It's a Small World</label></li>
+          <li><input type="checkbox" data-key="mission-1" id="m1"><label for="m1">Conèixer Frozen Ever After</label></li>
+          <li><input type="checkbox" data-key="mission-2" id="m2"><label for="m2">Menjar un gelat gegant</label></li>
+          <li><input type="checkbox" data-key="mission-3" id="m3"><label for="m3">Fer una foto davant del castell</label></li>
+          <li><input type="checkbox" data-key="mission-4" id="m4"><label for="m4">Fer una foto tota la familia</label></li>
+          <li><input type="checkbox" data-key="mission-5" id="m5"><label for="m5">Veure la desfilada</label></li>
+          <li><input type="checkbox" data-key="mission-6" id="m6"><label for="m6">Fer un petó a la Joana</label></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Un segell per cada terra</h3>
+        <p style="font-size:12px;color:var(--muted);">Toca cada segell quan visitis la terra.</p>
+        <div class="stamp-grid" id="stamp-grid">
+          <button class="stamp-slot" data-key="stamp-0">Fantasyland</button>
+          <button class="stamp-slot" data-key="stamp-1">Main Street</button>
+          <button class="stamp-slot" data-key="stamp-2">Adventureland</button>
+          <button class="stamp-slot" data-key="stamp-3">Frontierland</button>
+          <button class="stamp-slot" data-key="stamp-4">Tomorrowland</button>
+          <button class="stamp-slot" data-key="stamp-5">Frozen</button>
+          <button class="stamp-slot" data-key="stamp-6">Pixar</button>
+          <button class="stamp-slot" data-key="stamp-7">Avengers</button>
+        </div>
+      </div>
+
+      <div class="diploma">
+        <img src="assets/illustrations/passport-emblem.svg" alt="">
+        <div class="section-kicker" style="text-align:center;">Diploma oficial</div>
+        <h2 style="font-size:18px;">Exploradora Disney</h2>
+        <p style="font-size:12px;">Aquest diploma acredita que</p>
+        <div class="name-line">Bruna Boluda</div>
+        <p style="font-size:12px;">ha completat amb valentia la seva primera gran aventura a Disneyland Paris.</p>
+        <div class="sign-row">
+          <div class="sign"><div class="line"></div><span>Papa</span></div>
+          <div class="sign"><div class="line"></div><span>Mama</span></div>
+          <div class="sign"><div class="line"></div><span>Avis</span></div>
+        </div>
+        <div class="sign-row">
+          <div class="sign"><div class="line"></div><span>Artur</span></div>
+          <div class="sign"><div class="line"></div><span>Martina</span></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BOTTOM NAV -->
+  <nav class="bottom-nav">
+    <button class="nav-btn active" data-view="home"><svg class="icon"><use href="#i-home"/></svg>Inici</button>
+    <button class="nav-btn" data-view="days"><svg class="icon"><use href="#i-calendar"/></svg>Dies</button>
+    <button class="nav-btn" data-view="maps"><svg class="icon"><use href="#i-map"/></svg>Mapes</button>
+    <button class="nav-btn" data-view="guide"><svg class="icon"><use href="#i-compass2"/></svg>Guia</button>
+    <button class="nav-btn" data-view="passport"><svg class="icon"><use href="#i-passport"/></svg>Passaport</button>
+  </nav>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">✕</button>
+    <img id="lightbox-img" src="" alt="Mapa ampliat">
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

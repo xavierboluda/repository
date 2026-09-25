@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-label="Emblema del passaport">
+  <circle cx="150" cy="150" r="140" fill="none" stroke="#c9a227" stroke-width="3"/>
+  <circle cx="150" cy="150" r="126" fill="none" stroke="#c9a227" stroke-width="1.5"/>
+  <g fill="none" stroke="#c9a227" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="95" y="150" width="110" height="65" fill="none"/>
+    <rect x="115" y="110" width="70" height="105" fill="none"/>
+    <polygon points="115,110 150,75 185,110"/>
+    <line x1="150" y1="75" x2="150" y2="55"/>
+    <polygon points="150,55 165,61 150,67" fill="#c9a227" stroke="none"/>
+    <rect x="70" y="165" width="30" height="50"/>
+    <polygon points="70,165 85,140 100,165"/>
+    <rect x="200" y="165" width="30" height="50"/>
+    <polygon points="200,165 215,140 230,165"/>
+    <path d="M138 215 v-25 a12 12 0 0 1 24 0 v25 z"/>
+  </g>
+  <text x="150" y="250" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="20" fill="#c9a227" letter-spacing="2">EXPLORADORA</text>
+  <text x="150" y="272" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="14" fill="#c9a227" letter-spacing="4">DISNEY</text>
+</svg>

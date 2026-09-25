@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 380" font-family="'Inter','Work Sans',Arial,sans-serif">
+  <defs>
+    <style>
+      .land { stroke: #1a2744; stroke-width: 1.5; stroke-dasharray: 3 5; }
+      .poi-dot { fill: #1a2744; stroke: #f7f1e3; stroke-width: 2; }
+      .poi-label { font-size: 13px; fill: #1a2744; font-weight: 600; }
+      .poi-num { font-size: 11px; fill: #fff; font-weight: 700; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect width="620" height="380" fill="#f4ede0"/>
+  <ellipse class="land" cx="310" cy="190" rx="280" ry="150" fill="#f0e2b8"/>
+  <text x="310" y="60" text-anchor="middle" font-size="15" letter-spacing="1px" fill="#6b7280" text-transform="uppercase">DISNEY VILLAGE</text>
+
+  <!-- canal decoratiu -->
+  <path d="M40 250 C 200 220, 420 220, 580 260" stroke="#a8c5d6" stroke-width="18" fill="none" opacity="0.6"/>
+
+  <g>
+    <circle class="poi-dot" cx="180" cy="150" r="12"/><text class="poi-num" x="180" y="154">1</text>
+    <text class="poi-label" x="198" y="154">STK House</text>
+  </g>
+  <g>
+    <circle class="poi-dot" cx="300" cy="130" r="12"/><text class="poi-num" x="300" y="134">2</text>
+    <text class="poi-label" x="318" y="134">La Grange</text>
+  </g>
+  <g>
+    <circle class="poi-dot" cx="420" cy="160" r="12"/><text class="poi-num" x="420" y="164">3</text>
+    <text class="poi-label" x="438" y="164">Chez Rémy (Village)</text>
+  </g>
+  <g>
+    <circle class="poi-dot" cx="260" cy="210" r="12" fill="#c9a227"/><text class="poi-num" x="260" y="214">4</text>
+    <text class="poi-label" x="278" y="214">Lego Store</text>
+  </g>
+  <g>
+    <circle class="poi-dot" cx="500" cy="300" r="13" fill="#5b7ea3"/><text class="poi-num" x="500" y="304">🏨</text>
+    <text class="poi-label" x="440" y="330">Newport Bay Club (8 min a peu)</text>
+  </g>
+</svg>

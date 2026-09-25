@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Icona original de l'app: castell i estrella">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4DC0EF"/>
+      <stop offset="0.45" stop-color="#7C5CC4"/>
+      <stop offset="1" stop-color="#E62D6B"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3d98a"/>
+      <stop offset="1" stop-color="#c9a227"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="196" fill="#fbf7ee" opacity="0.96"/>
+  <g stroke="#1a2744" stroke-width="7" stroke-linejoin="round" fill="none">
+    <rect x="176" y="270" width="160" height="90" fill="#fbf7ee"/>
+    <rect x="228" y="200" width="56" height="70" fill="#fbf7ee"/>
+    <polygon points="228,200 256,158 284,200" fill="url(#gold)"/>
+    <rect x="150" y="232" width="34" height="46" fill="#fbf7ee"/>
+    <polygon points="150,232 167,204 184,232" fill="url(#gold)"/>
+    <rect x="328" y="232" width="34" height="46" fill="#fbf7ee"/>
+    <polygon points="328,232 345,204 362,232" fill="url(#gold)"/>
+    <path d="M240 360 v-40 a16 16 0 0 1 32 0 v40z" fill="#1a2744" stroke="none"/>
+  </g>
+  <path fill="url(#gold)" d="M256 122 l6 15 16 2 -12 11 3 16 -13 -8 -13 8 3 -16 -12 -11 16 -2z"/>
+</svg>
